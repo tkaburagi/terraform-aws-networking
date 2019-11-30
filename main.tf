@@ -51,3 +51,11 @@ resource "aws_nat_gateway" "nat" {
   subnet_id = aws_subnet.public.*.id[0]
   allocation_id = aws_eip.nat.id
 }
+
+output "aws_eip" {
+  value = aws_eip.nat.public_ip
+}
+
+output "vpc_id" {
+  value = aws_vpc.playground.id
+}
