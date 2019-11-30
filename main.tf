@@ -50,9 +50,3 @@ resource "aws_nat_gateway" "nat" {
   subnet_id = aws_subnet.public.*.id[0]
   allocation_id = aws_eip.nat.id
 }
-
-resource "aws_eip" "eip" {
-  count = var.instance_count
-  instance = var.instance_id
-  vpc = true
-}
