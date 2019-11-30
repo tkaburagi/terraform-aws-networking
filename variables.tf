@@ -15,3 +15,9 @@ variable "pubic_subnets_cidr" {
 variable "public_subnet_name" {
     default = "public"
 }
+
+variable "instance_count" {
+    default = 1
+}
+
+variable "instance_id" {}
