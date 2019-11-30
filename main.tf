@@ -9,11 +9,10 @@ resource "aws_vpc" "playground" {
 # Subnet
 resource "aws_subnet" "public" {
   vpc_id = aws_vpc.playground.id
-  count = length(var.availability_zones)
-  cidr_block = var.pubic_subnets_cidr[count.index]
-  availability_zone = var.availability_zones[count.index]
+  cidr_block = var.pubic_subnets_cidr[0]
+  availability_zone = var.availability_zones[0]
   tags = {
-    Name = "${var.public_subnet_name}-${count.index}"
+    Name = var.public_subnet_name
   }
 }
 

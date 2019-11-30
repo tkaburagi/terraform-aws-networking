@@ -9,7 +9,7 @@ variable "vpc_cidr" {
 
 variable "pubic_subnets_cidr" {
     type = "list"
-    default = ["10.10.0.0/24", "10.10.1.0/24"]
+    default = ["10.10.1.0/24"]
 }
 
 variable "public_subnet_name" {
